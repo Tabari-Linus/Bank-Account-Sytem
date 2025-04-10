@@ -60,5 +60,24 @@
             <Label fx:id="balanceLabel" text="Display Panel" style="-fx-font-weight: bold;"/>
             <TextArea fx:id="transactionHistoryArea" editable="false" prefRowCount="10" style="-fx-font-weight: 200;"/>
         </VBox>
+
+
     </center>
+
+<!--    <bottom>-->
+<!--        <VBox spacing="10">-->
+<!--            <padding>-->
+<!--                <Insets top="10" right="10" bottom="10" left="10"/>-->
+<!--            </padding>-->
+<!--            <Label text="Transaction History" style="-fx-font-size: 16px;"/>-->
+<!--            <TableView fx:id="transactionTable">-->
+<!--                <columns>-->
+<!--                    <TableColumn fx:id="dateColumn" text="Date"/>-->
+<!--                    <TableColumn fx:id="typeColumn" text="Type"/>-->
+<!--                    <TableColumn fx:id="amountColumn" text="Amount"/>-->
+<!--                    <TableColumn fx:id="balanceColumn" text="Balance After"/>-->
+<!--                </columns>-->
+<!--            </TableView>-->
+<!--        </VBox>-->
+<!--    </bottom>-->
 </BorderPane>

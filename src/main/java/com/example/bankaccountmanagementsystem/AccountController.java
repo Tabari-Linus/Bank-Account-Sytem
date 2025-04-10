@@ -283,6 +283,16 @@ public class AccountController {
 
     }
 
+//    private void refreshTransactionTable() {
+//        accounts
+//        TransactionHistorylist current = currentAccount.transactionHead;
+//        while (current != null) {
+//            transactions.add(current);
+//            current = current.next;
+//        }
+//        transactionTable.setItems(transactions);
+//    }
+
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
