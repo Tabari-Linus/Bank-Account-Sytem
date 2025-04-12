@@ -11,14 +11,14 @@ public class SavingsAccount extends BankAccount {
 
     @Override
     public boolean withdraw(double amount) {
-        if (amount <= 0) {
-            System.out.println("Amount to withdraw must be positive");
-            return false;
-        }
-        if (accountBalance - amount < MINBALANCE) {
-            System.out.println("Withdrawal denied. Insufficient balance.");
-            return false;
-        }
+//        if (amount <= 0) {
+//            System.out.println("Amount to withdraw must be positive");
+//            return false;
+//        }
+//        if (accountBalance - amount < MINBALANCE) {
+//            System.out.println("Withdrawal denied. Insufficient balance.");
+//            return false;
+//        }
         accountBalance -= amount;
         addTransaction("Withdrawal", amount);
         return true;
@@ -26,10 +26,10 @@ public class SavingsAccount extends BankAccount {
 
     @Override
     public void deposit(double amount) {
-        if (amount <= 0) {
-            System.out.println("Amount to deposit must be positive");
-            return;
-        }
+//        if (amount <= 0) {
+//            System.out.println("Amount to deposit must be positive");
+//            return;
+//        }
         accountBalance += amount;
         addTransaction("Deposit ", amount);
     }

@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -33,8 +34,8 @@ public class AccountController {
 
     @FXML
     private TextField nTransactions;
-    @FXML
-    private Label balanceLabel;
+
+
     @FXML
     private TextArea transactionHistoryArea;
 
@@ -176,7 +177,7 @@ public class AccountController {
 
         if (currentAccount != null) {
             currentAccount.deposit(amount);
-            balanceLabel.setText("Balance: GHC" + currentAccount.getBalance());
+            transactionHistoryArea.setText("Balance: GHC" + currentAccount.getBalance());
             updateTransactionHistory("Deposit: GHC" + amount);
         }
     }
@@ -209,10 +210,17 @@ public class AccountController {
             return;
         }
         currentAccount = getAccount(accountNum);
+        if (currentAccount instanceof FixedDepositAccount){
+            LocalDate maturityDate = ((FixedDepositAccount) currentAccount).getMaturityDate();
+            if (LocalDate.now().isBefore(maturityDate)) {
+                showAlert(Alert.AlertType.ERROR, "Error", "Withdrawal denied. Account not matured for withdrawal. Locked until " + maturityDate);
+                return ;
+            }
+        }
 
         if (currentAccount != null && currentAccount.withdraw(amount)) {
-            balanceLabel.setText("Balance: GHC" + currentAccount.getAccountBalance());
-            updateTransactionHistory("Withdraw: GHC" + amount);
+            transactionHistoryArea.setText("Balance: GHC" + currentAccount.getAccountBalance());
+            updateTransactionHistory("Withdrawal: GHC" + amount);
         } else {
             showAlert(Alert.AlertType.ERROR, "Error", "Insufficient balance or invalid operation.");
         }

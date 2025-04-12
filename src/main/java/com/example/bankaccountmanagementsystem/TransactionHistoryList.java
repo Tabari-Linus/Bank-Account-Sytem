@@ -34,18 +34,6 @@ class TransactionHistoryList implements Iterable<String> {
         return result;
     }
 
-    public List<String> getTransaction(String accountNumber) {
-        List<String> result = new ArrayList<>();
-        Node current = head;
-
-        while (current != null) {
-            if (current.transaction.contains(accountNumber)) {
-                result.add(current.transaction);
-            }
-            current = current.next;
-        }
-        return result;
-    }
 
     @Override
     public java.util.Iterator<String> iterator() {

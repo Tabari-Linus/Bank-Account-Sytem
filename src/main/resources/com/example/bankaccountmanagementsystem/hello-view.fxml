@@ -57,7 +57,7 @@
                 <Button text="Show Last N Transactions" onAction="#handleShowTransactions"/>
             </HBox>
 
-            <Label fx:id="balanceLabel" text="Display Panel" style="-fx-font-weight: bold;"/>
+            <Label fx:id="transactionHistoryLabel" text="Display Panel" style="-fx-font-weight: bold;"/>
             <TextArea fx:id="transactionHistoryArea" editable="false" prefRowCount="10" style="-fx-font-weight: 200;"/>
         </VBox>
 

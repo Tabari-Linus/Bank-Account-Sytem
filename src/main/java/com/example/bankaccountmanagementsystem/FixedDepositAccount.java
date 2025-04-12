@@ -19,16 +19,17 @@ public class FixedDepositAccount extends BankAccount {
 
     @Override
     public boolean withdraw(double amount) {
-        if (LocalDate.now().isBefore(maturityDate)) {
-            System.out.println("Withdrawal denied. Account not matured for withdrawal. Locked until " + maturityDate);
-            return false;
-        } else if (amount <= 0) {
-            System.out.println("Amount should not be less than zero.");
-            return false;
-        } else if (amount > accountBalance) {
-            System.out.println("Insufficient funds in the account.");
-            return false;
-        }
+//        if (LocalDate.now().isBefore(maturityDate)) {
+//            System.out.println("Withdrawal denied. Account not matured for withdrawal. Locked until " + maturityDate);
+//
+//            return false;
+//        } else if (amount <= 0) {
+//            System.out.println("Amount should not be less than zero.");
+//            return false;
+//        } else if (amount > accountBalance) {
+//            System.out.println("Insufficient funds in the account.");
+//            return false;
+//        }
 
         if (!interestApplied) {
             applyInterest();
@@ -49,10 +50,10 @@ public class FixedDepositAccount extends BankAccount {
 
     @Override
     public void deposit(double amount) {
-        if (amount <= 0) {
-            System.out.println("Amount to deposit must be positive");
-            return;
-        }
+//        if (amount <= 0) {
+//            System.out.println("Amount to deposit must be positive");
+//            return;
+//        }
         accountBalance += amount;
         addTransaction("Deposit", amount);
     }

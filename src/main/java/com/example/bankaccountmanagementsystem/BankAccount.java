@@ -43,10 +43,10 @@ public abstract class BankAccount implements BankingOperations {
         lastN.forEach(System.out::println);
     }
 
-    public String[] getTransactionHistory(){
-        List<String> lastN = transactionHistory.getTransaction(this.accountNumber);
-        return null;
-    }
+//    public String[] getTransactionHistory(){
+//        List<String> lastN = transactionHistory.getTransaction(this.accountNumber);
+//        return null;
+//    }
 
     protected String getAccountType() {
         return accountType;
@@ -63,20 +63,20 @@ public abstract class BankAccount implements BankingOperations {
     }
 
     public static BankAccount getAccount(String accountNumber) {
-        try {
-
-            if (accountNumber.isEmpty()) {
-                System.out.println("Account number cannot be empty.");
-                return null;
-            }
-            if (accountNumber.length() != 10) {
-                System.out.println("Account number must be 10 digits long.");
-                return null;
-            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            return null;
-        }
+//        try {
+//
+//            if (accountNumber.isEmpty()) {
+//                System.out.println("Account number cannot be empty.");
+//                return null;
+//            }
+//            if (accountNumber.length() != 10) {
+//                System.out.println("Account number must be 10 digits long.");
+//                return null;
+//            }
+//        } catch (Exception e) {
+//            System.out.println("Error: " + e.getMessage());
+//            return null;
+//        }
         // Search for the account in the list of accounts
         for (BankAccount account : accounts) {
             if (account.accountNumber.equals(accountNumber)) {

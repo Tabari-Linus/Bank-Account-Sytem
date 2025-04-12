@@ -13,6 +13,5 @@ interface BankingOperations {
 
     void displayTransactionHistory(int n);
 
-    String[] getTransactionHistory();
 }
 
